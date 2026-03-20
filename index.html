@@ -3,33 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moja Aplikacija</title>
+  <title>ToniSoft | Mobile App Development</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Dobrodošli</h1>
-    <p>Ja sam Toni – pravim moderne mobilne aplikacije</p>
+  <nav class="navbar">
+    <div class="logo">Toni<span>Soft</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">O meni</a></li>
+      <li><a href="#projects">Aplikacije</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>Zdravo, ja sam <span class="highlight">Antonio</span></h1>
+      <p>Freelance programer iz Srbije specijalizovan za izradu modernih i funkcionalnih mobilnih aplikacija.</p>
+      <a href="#projects" class="btn btn-primary">Pogledaj moj rad</a>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>O meni</h2>
-    <p>Zdravo! Ja sam Toni, freelance developer iz Srbije. Pravim korisne i lepe mobilne aplikacije koje olakšavaju svakodnevni život.</p>
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">O meni</h2>
+      <p class="about-text">
+        Kao softverski inženjer, fokusiran sam na kreiranje korisnih rešenja koja olakšavaju svakodnevni život. 
+        Moja ekspertiza obuhvata kompletan proces razvoja – od ideje i dizajna, do programiranja i postavljanja na markete.
+      </p>
+      <div class="skills">
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">Kotlin</span>
+        <span class="skill-tag">Android Studio</span>
+        <span class="skill-tag">Laravel</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">JavaScript / HTML / CSS</span>
+      </div>
+    </div>
   </section>
 
-  <section id="app">
-    <h2>Moja aplikacija</h2>
-    <p>Pogledaj moju aplikaciju na Google Play-u:</p>
-    <a href="https://play.google.com/store/apps/details?id=com.tvojanaziv.aplikacije" target="_blank" class="button">Google Play link</a>
+  <section id="projects" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Moje Aplikacije</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <div class="card-content">
+            <h3>Sleeply</h3>
+            <p>Aplikacija za opuštanje i bolji san koja koristi zvukove prirode i beli šum. Dostupna na Play Store-u.</p>
+            <a href="#" class="btn btn-outline">Google Play link</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h3>UsputApp</h3>
+            <p>Platforma za deljenje prevoza (ride-sharing) i dostavu paketa, izgrađena pomoću React Native i Laravel API-ja.</p>
+            <span class="status">U razvoju</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h3>Arena Znanja</h3>
+            <p>Multiplayer kviz igra dizajnirana za takmičenje i testiranje znanja sa drugim korisnicima u realnom vremenu.</p>
+            <span class="status">U razvoju</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p>Piši mi na: <a href="mailto:toneex97@gmail">toneex97@gmail.com</a></p>
+  <section id="contact" class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Hajde da sarađujemo</h2>
+      <p class="contact-text">Imaš ideju za aplikaciju ili ti je potreban pouzdan developer? Javi se!</p>
+      <div class="contact-links">
+        <a href="mailto:toneex97@gmail.com" class="btn btn-primary">toneex97@gmail.com</a>
+        <a href="https://github.com/pAtisha" target="_blank" class="btn btn-outline">Moj GitHub profil</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 ToniSoft. Sva prava zadržana.</p>
+    <p>&copy; 2026 ToniSoft. Sva prava zadržana.</p>
   </footer>
 </body>
 </html>
