@@ -1,0 +1,204 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Promenjeno iz height u min-height */
+    padding: 20px; /* Dodat prostor oko kontejnera da ne udara u ivice */
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+.app-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+.step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.step.active {
+    display: block;
+    opacity: 1;
+}
+
+h1 { color: #4f46e5; }
+p { font-size: 1.1em; margin-bottom: 25px; line-height: 1.5; }
+
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+button:hover { background-color: #4338ca; }
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+
+/* Stilizacija za GIF kontejner u prvom koraku */
+.motivation-gif-container {
+    margin: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.motivation-gif {
+    max-width: 100%; /* Da GIF bude responsivan */
+    height: auto;
+    border: 3px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Posebna stilizacija za naglašeni tekst */
+.motivation-punchline {
+    font-weight: bold;
+    color: #4f46e5;
+    background-color: #eef2ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* --- DIZAJN ZA PREVOZ NA ISPIT --- */
+.exam-driver-section {
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+
+.exam-driver-section h3 {
+    color: #374151;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.custom-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.custom-radio {
+    cursor: pointer;
+    display: block; /* Da zauzme celu širinu */
+}
+
+/* Sakrivamo default HTML radio krug */
+.custom-radio input[type="radio"] {
+    display: none; 
+}
+
+/* Osnovni izgled kartice */
+.radio-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+}
+
+.radio-card .icon {
+    font-size: 1.8em;
+    margin-right: 15px;
+}
+
+.radio-card .text {
+    font-size: 0.95em;
+    color: #4b5563;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Izgled kartice kada je KLIKNUTA (izabrana) */
+.custom-radio input[type="radio"]:checked + .radio-card {
+    border-color: #4f46e5;
+    background-color: #eef2ff;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15);
+    transform: translateY(-2px); /* Blago podizanje */
+}
+
+.custom-radio input[type="radio"]:checked + .radio-card .text {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+/* --- Prilagođavanje za mobilne telefone --- */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 25px 15px; /* Smanjen padding na mobilnom */
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.5em; /* Malo manji naslov da stane u jedan/dva reda */
+        margin-top: 0;
+    }
+
+    .radio-card {
+        padding: 10px; /* Skupljamo malo kartice */
+    }
+    
+    .radio-card .icon {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+}
+
+/* --- DIZAJN ZA NOVI KALENDAR --- */
+#trip-date {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #4f46e5; /* Plava boja za tekst */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#trip-date:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
