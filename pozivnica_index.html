@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplomski & Roadtrip</title>
+    <link rel="stylesheet" href="pozivnica_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="app-container">
+    <div class="step active" id="step-1">
+        <h1>Treneru, vreme je za finalnu seriju! 💪🎓</h1>
+        
+        <div class="motivation-gif-container">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXRjam5ydTB3aHRzMjV1b2p6YWgwc28xeTRtaHk5bnNqMHJhcTR3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oShObTfbg3S5G/giphy.gif" alt="Fitness Motivation Fail" class="motivation-gif">
+        </div>
+
+        <p>Znam da ti je učenje palo kao progresivno preopterećenje koje nisi planirala, i da ti se 28. april čini kao Olimpijske igre. Ali, hej, nema preskakanja treninga, a pogotovo ne ovog diplomskog!</p>
+        <p class="motivation-punchline">Zamisli učenje kao zadnju seriju čučnjeva gde rušiš lični rekord – boli, ali kad završiš, osećaj je neverovatan. Ustaj, 'iscepaj' tu skriptu pa da se oporavljamo na roadtrip-u!</p>
+
+        <div class="exam-driver-section">
+            <h3>Nego, ko te vozi na taj finalni okršaj? 🚘</h3>
+            <div class="custom-radio-group">
+                <label class="custom-radio">
+                    <input type="radio" name="exam_driver" value="antonio" checked>
+                    <span class="radio-card">
+                        <span class="icon">😎</span>
+                        <span class="text">VIP prevoz (Ja te vozim, klima u Fiat Bravu je spremna da hladi pregrejan mozak)</span>
+                    </span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="exam_driver" value="sama">
+                    <span class="radio-card">
+                        <span class="icon">🏃‍♀️</span>
+                        <span class="text">Sama se snalazim (Nepotreban kardio pre ispita, čuvaj energiju)</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <button onclick="nextStep(2)">Idemo na oporavak 🚀</button>
+    </div>
+
+    <div class="step" id="step-2">
+        <h1>Zasluženi oporavak: Jednodnevni izlet! 🗺️🚙</h1>
+        
+        <div class="motivation-gif-container">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDZoOGs1bGw0N3VnN2xsYWt3eTBxOHdjZGZ2dW1mZ2EyZDJjNnVlZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iCcNL0bd5XDT9gTFzJ/giphy.gif" alt="Roadtrip Vibe" class="motivation-gif">
+        </div>
+
+        <p>Ispit je gotov, ocena je u indeksu, a nivo kortizola se vraća u normalu. Vreme je za promenu ambijenta i jedan ozbiljan "deload" od učenja.</p>
+        
+        <p class="motivation-punchline">
+            Kao tvoj stalni "Personal Driver", stavka o vozaču nije ni bila na pregovaračkom stolu. Fiat Bravo je utegnut, rezervoar je pun, a tvoje je samo da se zavališ i uživaš u pogledu na Srbiju.
+        </p>
+
+        <button onclick="nextStep(3)">Idemo na planiranje 🗓️</button>
+    </div>
+
+    <div class="step" id="step-3">
+        <h1>Kada tačno palimo motore? 🗓️</h1>
+        
+        <div class="motivation-gif-container">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnVwenFxbDU2Y29nY2t1NGoxMWg3dmF4NTY1NXZmNThucTY1aHNrMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2YWxPbinlJYX5zMc/giphy.gif" alt="Ready to go" class="motivation-gif">
+        </div>
+
+        <p>Diplomski je (uspešno) arhiviran, stres je ostao u čitaonici, a tvoj kalendar je napokon prodisao.</p>
+        
+        <p class="motivation-punchline">
+            Izaberi datum kada ti najviše odgovara da pobegnemo. Može odmah sutradan dok te drži adrenalin, a može i neki dan kasnije kada nadoknadiš san. Ti diktiraš tempo!
+        </p>
+
+        <input type="text" id="trip-date" placeholder="Klikni da izabereš datum...">
+        
+        <button onclick="nextStep(4)">Upisano u kalendar! 📅</button>
+    </div>
+
+    <div class="step" id="step-4">
+    <h1>Pravila puta i zaduženja 🗺️🎧</h1>
+    
+    <div class="motivation-gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aGo2dWJ3bGVtNmw3ZmtpanI0b3ZzNG05ejBiYTJsZmJjenA4c3RjeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oKIP8boCXD6eskVvW/giphy.gif" alt="Car Vibe" class="motivation-gif">
+    </div>
+
+    <p>Fiat Bravo je spreman, datum je upisan, ali moramo da podelimo zaduženja. Da ne bude posle da smo se zaglavili u nekoj njivi jer je navigacija zaspala!</p>
+
+    <div class="exam-driver-section">
+        <h3>Ko drži kompas i bira rutu? 🧭</h3>
+        <div class="custom-radio-group">
+            <label class="custom-radio">
+                <input type="radio" name="route" value="ja_biram" checked>
+                <span class="radio-card">
+                    <span class="icon">😎</span>
+                    <span class="text">Ja biram (Spremio sam top mesta, tvoje je samo da uživaš)</span>
+                </span>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="route" value="ti_biras">
+                <span class="radio-card">
+                    <span class="icon">👑</span>
+                    <span class="text">Ti biraš (Imaš punu kontrolu, ja samo vozim tamo gde pokažeš)</span>
+                </span>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="route" value="zajedno">
+                <span class="radio-card">
+                    <span class="icon">🤝</span>
+                    <span class="text">Zajedno biramo (Dogovor kuću gradi, planiramo svaku pauzu i skretanje zajedno)</span>
+                </span>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="route" value="google_maps">
+                <span class="radio-card">
+                    <span class="icon">🚜</span>
+                    <span class="text">Google Maps (Avantura u nepoznato, pa gde nas put navede)</span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="exam-driver-section">
+        <h3>Podela uloga u kabini? 🚘</h3>
+        <div class="custom-radio-group">
+            <label class="custom-radio">
+                <input type="radio" name="role" value="ja_vozim_ti_dj" checked>
+                <span class="radio-card">
+                    <span class="icon">🎧</span>
+                    <span class="text">Ja vozim, ti si DJ (Moje je da držim pravac, a tvoje da držiš ritam i atmosferu)</span>
+                </span>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="role" value="ti_vozis">
+                <span class="radio-card">
+                    <span class="icon">🏎️</span>
+                    <span class="text">Ti voziš (Prepustiću ti volan, a ja preuzimam ulogu navigacije i di-džeja)</span>
+                </span>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="role" value="mesano">
+                <span class="radio-card">
+                    <span class="icon">⚖️</span>
+                    <span class="text">Timska igra (Malo preuzimaš volan, pa se malo zavališ i uživaš puštajući muziku)</span>
+                </span>
+            </label>
+        </div>
+    </div>
+    
+    <button onclick="nextStep(5)">Skoro smo na kraju... 🤫</button>
+</div>
+    <div class="step" id="step-5">
+        <h1>I za kraj... Jedna sitnica ✉️🤫</h1>
+        
+        <div class="motivation-gif-container">
+            <img src="https://i.pinimg.com/originals/18/ba/42/18ba42b05735abe4d80fe4c77f3b3ccb.gif" alt="Top Secret" class="motivation-gif">
+        </div>
+
+        <p>Misliš da je to to? Nema šanse. Kada završimo našu turu i kada parkiram Fiat na zadnju destinaciju, dobićeš nešto na ruke. Pravo, fizičko, papirno.</p>
+        
+        <p class="motivation-punchline">
+            Bez panike, nije poziv za Spartan Race, niti plan ishrane bez ugljenih hidrata. Mnogo je opuštenije i lepše! Ali, da bi saznala šta je u koverti, moraš prvo da preživiš učenje, diplomski i moju vožnju. Deal? 🤝
+        </p>
+
+        <button onclick="submitData()">Zapečati dogovor i pošalji 💌</button>
+    </div>
+
+    <div class="step" id="step-6">
+    <h1>Dogovoreno! 🎉🚗</h1>
+    
+    <div class="motivation-gif-container">
+        <img src="https://media1.tenor.com/m/nUO3j_MkceQAAAAd/peaky-blinders-thomas-shelby.gif" alt="Victory Celebration" class="motivation-gif">
+    </div>
+
+    <p>Odgovori su bezbedno sleteli u moj inbox. Misija "Oporavak" je zvanično pokrenuta!</p>
+    
+    <p class="motivation-punchline">
+        Sada se fokusiraj, razvali taj diplomski, a onda prelazimo na zabavni deo. Fiat Bravo se već zagreva, a koverta čeka... Srećno učenje! 💪🎓
+    </p>
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/sr.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="pozivnica_script.js"></script>
+</body>
+</html>
