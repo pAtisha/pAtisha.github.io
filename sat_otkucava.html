@@ -13,18 +13,18 @@
             padding: 0;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-            min-height: 100vh;
-            /* Flex postavka da uvek bude centrirano */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-            overflow-x: hidden; /* Sprečava skrolovanje levo-desno */
-            position: relative;
-        }
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			/* Uklonjen align-items: center koji je blokirao skrol */
+			padding: 40px 10px; /* Dodat prostor gore i dole za ugodan skrol */
+			color: #333;
+			overflow-x: hidden;
+			position: relative;
+		}
 
         /* Lebdeći elementi u pozadini */
         .floating-bg {
@@ -53,20 +53,19 @@
         }
 
         /* Glavni kontejner */
-        .container {
-            background: rgba(255, 255, 255, 0.85);
-            /* OBAVEZNO ZA IPHONE: webkit prefiks za blur */
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px 20px;
-            max-width: 600px;
-            width: 92%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 1;
-            margin: 20px 0; /* Prostor iznad i ispod na manjim ekranima */
-        }
+		.container {
+			background: rgba(255, 255, 255, 0.85);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+			border-radius: 20px;
+			padding: 30px 20px;
+			max-width: 600px;
+			width: 92%;
+			text-align: center;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			z-index: 1;
+			margin: auto; /* Ovo vraća vertikalno centriranje, a ne lomi skrol! */
+		}
 
         /* Tajmer */
         .timer-section h2 {
