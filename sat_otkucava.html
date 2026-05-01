@@ -2,7 +2,7 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Motivacija za zadnji ispit!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
@@ -17,11 +17,12 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
             min-height: 100vh;
+            /* Flex postavka da uvek bude centrirano */
             display: flex;
             justify-content: center;
             align-items: center;
             color: #333;
-            overflow: hidden;
+            overflow-x: hidden; /* Sprečava skrolovanje levo-desno */
             position: relative;
         }
 
@@ -37,72 +38,78 @@
             position: absolute;
             font-size: 2rem;
             animation: float 6s ease-in-out infinite;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
-        .floating-bg span:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .floating-bg span:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; }
-        .floating-bg span:nth-child(3) { top: 70%; left: 15%; animation-delay: 2s; }
-        .floating-bg span:nth-child(4) { top: 80%; left: 75%; animation-delay: 3s; }
-        .floating-bg span:nth-child(5) { top: 40%; left: 50%; animation-delay: 1.5s; }
+        .floating-bg span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floating-bg span:nth-child(2) { top: 15%; left: 85%; animation-delay: 1s; }
+        .floating-bg span:nth-child(3) { top: 75%; left: 10%; animation-delay: 2s; }
+        .floating-bg span:nth-child(4) { top: 85%; left: 80%; animation-delay: 3s; }
+        .floating-bg span:nth-child(5) { top: 45%; left: 85%; animation-delay: 1.5s; font-size: 1.5rem; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
         }
 
         /* Glavni kontejner */
         .container {
             background: rgba(255, 255, 255, 0.85);
+            /* OBAVEZNO ZA IPHONE: webkit prefiks za blur */
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px 20px;
             max-width: 600px;
-            width: 90%;
+            width: 92%;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             z-index: 1;
+            margin: 20px 0; /* Prostor iznad i ispod na manjim ekranima */
         }
 
         /* Tajmer */
         .timer-section h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 10px;
+            margin-bottom: 25px;
         }
 
         .time-box {
             background: #fff;
-            padding: 10px 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            min-width: 70px;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+            flex: 1; /* Omogućava da kutije ravnomerno dele prostor */
+            max-width: 75px;
         }
 
         .time-box span {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ff6b6b;
+            display: block;
         }
 
         .time-box p {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #888;
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
         /* Tekst i naslov */
         h1.bounce {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #2d3436;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             animation: bounceIn 1s cubic-bezier(0.28, 0.84, 0.42, 1);
         }
 
@@ -113,31 +120,37 @@
         }
 
         .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
             color: #444;
         }
 
         /* Tabela */
         .table-container h3 {
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
             color: #2d3436;
+        }
+
+        /* Skrol u slučaju da na nekom ekranu tabela probije širinu */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 15px;
             background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            white-space: nowrap; /* Sprečava prelom teksta u tabeli */
         }
 
         th, td {
-            padding: 12px;
+            padding: 10px;
             border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
         }
 
         th {
@@ -158,10 +171,21 @@
 
         /* Fusnota */
         .disclaimer {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-style: italic;
             color: #636e72;
             margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        /* Dodatna prilagođavanja za baš male telefone (npr. iPhone SE) */
+        @media (max-width: 375px) {
+            .time-box span { font-size: 1.4rem; }
+            .time-box p { font-size: 0.65rem; }
+            h1.bounce { font-size: 1.4rem; }
+            .countdown { gap: 6px; }
+            .container { padding: 25px 15px; }
+            th, td { font-size: 0.85rem; padding: 8px; }
         }
     </style>
 </head>
@@ -178,33 +202,35 @@
                 <div class="time-box"><span id="days">00</span><p>Dana</p></div>
                 <div class="time-box"><span id="hours">00</span><p>Sati</p></div>
                 <div class="time-box"><span id="minutes">00</span><p>Minuta</p></div>
-                <div class="time-box"><span id="seconds">00</span><p>Sekundi</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Sek</p></div>
             </div>
         </div>
 
         <div class="content-section">
             <h1 class="bounce">Ajmo, još samo taj jedan! 💪</h1>
             <p class="intro-text">
-                Knjigu u šake, jer ovaj zadnji ispit ne stoji samo između tebe i diplome... stoji između tebe i <strong>novih patika</strong> (bile to Skechers, Lotto ili neke potpuno treće)!
+                Knjigu u šake, jer ovaj zadnji ispit ne stoji samo između tebe i diplome... stoji između tebe i <strong>novih patika</strong>!
             </p>
 
             <div class="table-container">
                 <h3>Zvanična "Fond za patike" tarifa:</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ocena na ispitu</th>
-                            <th>Budžet za patike (RSD)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>6</td><td>6.000</td></tr>
-                        <tr><td>7</td><td>7.000</td></tr>
-                        <tr><td>8</td><td>8.000</td></tr>
-                        <tr><td>9</td><td>9.000</td></tr>
-                        <tr class="desetka"><td>10</td><td>10.000 👑</td></tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ocena na ispitu</th>
+                                <th>Budžet (RSD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>6</td><td>6.000</td></tr>
+                            <tr><td>7</td><td>7.000</td></tr>
+                            <tr><td>8</td><td>8.000</td></tr>
+                            <tr><td>9</td><td>9.000</td></tr>
+                            <tr class="desetka"><td>10</td><td>10.000 👑</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p class="disclaimer">* U zavisnosti od raspoloženja (i koliko me oduševiš), vrednost kupona može i da poraste ;)</p>
             </div>
         </div>
