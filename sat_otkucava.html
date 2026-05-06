@@ -261,12 +261,33 @@
             document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
             
         }, 1000);
+
+		// --- NEVIDLJIVA STATISTIKA ZA KONZOLU ---
+
+// 1. GLOBALNI BROJAČ (Koliko puta je bilo ko otvorio stranicu)
+// Koristimo besplatan API jer je GitHub Pages statičan
+const namespace = "motivacija-ispit-2026"; // Jedinstveno ime tvog projekta
+const key = "ukupni-pregledi"; // Ime brojača
+
+fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+    .then(response => response.json())
+    .then(data => {
+        // Ispisuje podatak u konzolu, videće samo onaj ko pritisne F12
+        console.log("%c👀 Pst! Tajna statistika:", "color: #6c5ce7; font-weight: bold; font-size: 14px;");
+        console.log(`Ukupan broj pregleda ove stranice: ${data.count}`);
+    })
+    .catch(err => {
+        // U slučaju da API ne radi, greška ostaje tiha
+    });
+
+
+// 2. LOKALNI BROJAČ (Opciono: Koliko puta je baš TA osoba na tom uređaju otvorila)
+let lokalnePosete = localStorage.getItem('brojPoseta') || 0;
+lokalnePosete++;
+localStorage.setItem('brojPoseta', lokalnePosete);
+console.log(`Ti si otvorio/la ovu stranicu tačno ${lokalnePosete} puta. Nema odustajanja! 💪`);
     </script>
-	<!-- Nevidljivi brojač poseta -->
-<a href="https://seeyoufarm.com" 
-   style="opacity: 0; position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; cursor: default;">
-    <img src="https://seeyoufarm.com" alt="Stats"/>
-</a>
+
 
 </body>
 </html>
